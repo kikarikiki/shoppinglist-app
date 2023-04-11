@@ -1,14 +1,19 @@
-import Header from "./components/Header";
+import React, { Component } from 'react';
+import Header from './components/Header';
+import FeedbackList from './components/FeedbackList'
+import FeedbackData from './data/FeedbackData'
 
-function App() {
-  return (
-  <>
-    <Header text=""/>
-    <div className="container">
-      <h1>Hello from the App component</h1>
-    </div>
-  </>
-  )
+class App extends Component {
+  render() {
+    return (
+    <>
+      <Header text=''/>
+      <div className='container'>
+        <FeedbackList />
+      </div>
+    </>
+    )
+  }
 }
 
 export default App
