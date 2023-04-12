@@ -3,10 +3,11 @@ import Header from './components/Header';
 import FeedbackList from './components/FeedbackList'
 
 class App extends Component {
+
   render() {
     return (
     <>
-      <Header text=''/>
+      <Header />
       <div className='container'>
         <FeedbackList />
       </div>

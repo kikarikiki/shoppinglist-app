@@ -1,11 +1,14 @@
-function Header( {text} ) {
-  return (
-    <header>
-      <div className="container">
-        <h2>{text}</h2>
-      </div>
-    </header>
-  )
+import React, { Component } from 'react';
+import NavBar from './navbar';
+
+class Header extends Component {
+  render() {
+    return (
+      <header>
+          <NavBar />
+      </header>
+    )
+  }
 }
 
 export default Header
