@@ -9,31 +9,36 @@ library.add(fasFaStar, farFaStar, faStarHalfAlt)
 
 class FeedbackItem extends Component {
   state = {
-    count: 5
+    user: this.props.user,
+    rating: this.props.rating,
+    text: this.props.text,
+    id: this.props.id
   };
 
   handleIncrement = () => {
-    this.setState({ count: this.state.count +1 });
+    this.setState({ rating: this.state.rating +1 });
   };
 
 
   render() {
     return (
-      <div className='card'>
-        <div className='card-header bg-warning'>
-          {this.formatCount()}
+      <div className='card my-4'>
+        <div className='card-header'>
+          {this.state.user}
         </div>
         <div className='card-body'>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi suscipit reiciendis est asperiores in vero alias accusamus minima dolorum tempore.</p>
-          <button onClick={this.handleIncrement} className='btn btn-primary'>Click</button>
-          </div>
+          <p>{this.formatCount()}</p>
+          <p>{this.state.text}</p>
+          <button onClick={this.handleIncrement} className='btn btn-primary me-2'>Increment</button>
+          <button onClick={() => this.props.onDelete(this.props.id)} className='btn btn-danger'>Delete</button>
+        </div>
       </div>
     );
   }
 
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? <><FontAwesomeIcon icon={farFaStar} /><span>{count}</span></> : <><FontAwesomeIcon icon={fasFaStar} /><span>{count}</span></>;
+    const { rating } = this.state;
+    return rating === 0 ? <><FontAwesomeIcon icon={farFaStar} className='text-warning me-2'/><span>{rating}</span></> : <><FontAwesomeIcon icon={fasFaStar}  className='text-warning me-2'/><span>{rating}</span></>;
   }
 }
 
