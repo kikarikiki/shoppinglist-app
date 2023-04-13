@@ -13,23 +13,24 @@ class App extends Component {
     ]
   };
 
-  handleDelete = (id) => {
-    const counters = this.state.counters.filter((counter) => counter.id !== id);
-    this.setState({ counters });
-  };
-
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
     counters[index].value++;
     this.setState({ counters });
   };
 
   handleReset = () => {
-    const counters = this.state.counters.map((counter) => {
-      counter.value = 0;
-      return counter;
+    const counters = this.state.counters.map(c => {
+      c.value = 0;
+      return c;
     });
+    this.setState({ counters });
+  };
+
+  handleDelete = (counterId) => {
+    const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
 
@@ -51,7 +52,7 @@ class App extends Component {
 
     return (
     <>
-      <NavBar />
+      <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
       <main className='container'>
         <div className="d-flex justify-content-between mb-2">
           <h5>{count} Items</h5>
