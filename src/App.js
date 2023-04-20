@@ -13,6 +13,11 @@ class App extends Component {
     ]
   };
 
+  handleDelete = (counterId) => {
+    const counters = this.state.counters.filter(c => c.id !== counterId);
+    this.setState({ counters });
+  };
+
   handleIncrement = (counter) => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
@@ -29,10 +34,6 @@ class App extends Component {
     this.setState({ counters });
   };
 
-  handleDelete = (counterId) => {
-    const counters = this.state.counters.filter(c => c.id !== counterId);
-    this.setState({ counters });
-  };
 
   render() {
     const { length: count } = this.state.counters
@@ -59,10 +60,10 @@ class App extends Component {
           <h5>Total: {isNaN(total) ? 0 : total}</h5>
         </div>
         <Counters
-          counters={this.state.counters}
           onReset={this.handleReset}
-          onIncrement={this.handleIncrement}
           onDelete={this.handleDelete}
+          onIncrement={this.handleIncrement}
+          counters={this.state.counters}
         />
       </main>
     </>
