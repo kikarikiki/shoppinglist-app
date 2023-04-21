@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import '../src/styles/App.scss'
+import '../src/styles/Cart_Card.scss'
+import '../src/styles/Bootstrap_Overwrites.scss'
 import NavBar from './components/navbar';
 import Counters from './components/counters';
 
@@ -7,10 +11,10 @@ class App extends Component {
 
   state = {
     counters: [
-      { id: 1, title: 'Samsara', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit', value: 1, price: 9.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/422084746/650x650x2/goldfruchtpalme-areca-s.jpg', img_copyright: 'https://www.fleurdirect.com/gold-palm-areca-klein.html' },
-      { id: 2, title: 'Kunundu', description: 'Lorem ipsum dolor sit amet', value: 1, price: 5.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/428421693/650x650x2/calathea-medaillon.jpg', img_copyright: 'https://www.fleurdirect.com/calathea-lebende-pflanze-braun.html' },
-      { id: 3, title: 'Bagashi', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing', value: 1, price: 1.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/419441205/calathea-beauty-star.jpg', img_copyright: 'https://www.fleurdirect.com/calathea-beauty-star.html' },
-      { id: 4, title: 'Tremendor', description: 'Lorem ipsum dolor sit amet consectetur', value: 1, price: 5.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/419479182/orangenbaum-m-in-terrakotta.jpg', img_copyright: 'https://www.fleurdirect.com/orange-baum-mittel-in-terra-cotta.html' }
+      { id: 1, title: 'Samsara', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero dicta inventore expedita fuga adipisci doloremque sint sit dolore atque! Nemo, quia reiciendis', value: 1, price: 9.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/422084746/650x650x2/goldfruchtpalme-areca-s.jpg', img_copyright: 'https://www.fleurdirect.com/gold-palm-areca-klein.html' },
+      { id: 2, title: 'Kunundu', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam accusantium minus, laudantium placeat incidunt explicabo.', value: 1, price: 5.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/428421693/650x650x2/calathea-medaillon.jpg', img_copyright: 'https://www.fleurdirect.com/calathea-lebende-pflanze-braun.html' },
+      { id: 3, title: 'Bagashi', description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, tempore aliquam quo velit expedita officia aut eius nemo est ex?', value: 1, price: 1.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/419441205/calathea-beauty-star.jpg', img_copyright: 'https://www.fleurdirect.com/calathea-beauty-star.html' },
+      { id: 4, title: 'Tremendor', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptates deleniti fugiat consectetur et dolorem officiis optio odit animi enim.', value: 1, price: 5.99, rating: 5.5, img_url: 'https://cdn.webshopapp.com/shops/344336/files/419479182/orangenbaum-m-in-terrakotta.jpg', img_copyright: 'https://www.fleurdirect.com/orange-baum-mittel-in-terra-cotta.html' }
     ]
   };
 
@@ -42,10 +46,6 @@ class App extends Component {
     });
     this.setState({ counters });
   };
-
-
-
-
 
   render() {
 
