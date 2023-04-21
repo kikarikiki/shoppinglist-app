@@ -49,9 +49,10 @@ class App extends Component {
 
   render() {
 
-    // Sum of Cart
     const items = this.state.counters;
-    let cartTotal = items.reduce((acc, cur)=> {
+
+    // Sum of Cart
+    let cartTotal = items.reduce((acc, cur) => {
       return acc + (cur.value * cur.price);
 
     // Display cartTotal with one dezimal only
@@ -63,12 +64,8 @@ class App extends Component {
 
     return (
     <>
-      <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
+      <NavBar totalProducts={this.state.counters.reduce((acc, cur) => { return acc + cur.value }, 0)} totalCart={isNaN(cartTotal) ? 0 : cartTotal} />
       <main className='container'>
-        <div className="d-flex justify-content-between mb-2">
-          <h5>{count} Items</h5>
-          <h5>Total: {isNaN(cartTotal) ? 0 : cartTotal}€</h5>
-        </div>
         <Counters
           onReset={this.handleReset}
           onDelete={this.handleDelete}

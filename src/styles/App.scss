@@ -24,3 +24,19 @@ p {
 i, .icon {
   color: #81C077;
 }
+
+.btn {
+  background: none;
+  border: none !important;
+  border-radius: none !important;
+  color: #515151;
+  text-transform: uppercase;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  font-weight: 500;
+
+  &:hover {
+    color: #aedaa6;
+    cursor: pointer;
+  }
+}

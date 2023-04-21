@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #EFF7ED !important;
+}
+.btn-nav {
+  border: none;
+  color: #515151;
+  transition: all 0.3s ease;
+  font-weight: 500;
+
+  &:hover {
+    border: none;
+    color: #aedaa6;
+    cursor: pointer;
+  }
+}
+
+.ftco-navbar-light {
+  position: relative;
+  top: 0;
+  padding: 20px 15px;
+}
